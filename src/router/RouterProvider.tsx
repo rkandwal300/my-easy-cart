@@ -8,31 +8,28 @@ const ProductDetail = lazy(() => import("@/files/PdDetail/ProductDetail"));
 const Error = lazy(() => import("@/files/Error"));
 const CartP = lazy(() => import("@/files/Cart/CartP"));
 const SignUp = lazy(() => import("@/files/SignUp/Sign_Up"));
-const LogIn2 = lazy(() => import("@/files/SignUp/LogIn2"));
+const LogIn = lazy(() => import("@/components/shared/auth"));
 const Contact = lazy(() => import("@/components/shared/Contact"));
 const About = lazy(() => import("@/components/shared/About"));
   
-import AuthRoute from "@/files/SignUp/AuthRoute";
-import Authentication from "@/files/SignUp/Authentication";
+import AuthRoute from "@/files/SignUp/AuthRoute"; 
+import { HEADER_LIST } from "@/lib/routes.enum";
  
 const routeConfig: RouteObject[] = [
   {
-    path: "/",
+    path: HEADER_LIST.home,
     element: <MainLayout />, 
     children: [
       { index: true, element: <ProductListPage /> },
-      { path: "products/:id", element: <ProductDetail /> },
-      { path: "contact", element: <Contact /> },
-      { path: "about", element: <About /> },
-      { path: "products/Cart", element: <CartP /> },
-      { path: "signup", element: <SignUp /> },
-      {
-        path: "LogIn",
+      { path: HEADER_LIST.productDetail, element: <ProductDetail /> },
+      { path: HEADER_LIST.contact, element: <Contact /> },
+      { path: HEADER_LIST.about, element: <About /> },
+      { path: HEADER_LIST.cart, element: <CartP /> },
+    {
+        path: HEADER_LIST.auth,
         element: (
           <AuthRoute children2={<SignUp />}>
-            <Authentication>
-              <LogIn2 />
-            </Authentication>
+              <LogIn />  
           </AuthRoute>
         ),
       },

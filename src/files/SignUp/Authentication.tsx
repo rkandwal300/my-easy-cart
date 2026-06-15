@@ -1,4 +1,4 @@
-import LogIn2 from './LogIn2'
+import LogIn2 from './auth'
 import SignUp from './Sign_Up'
 
 const Authentication = () => {

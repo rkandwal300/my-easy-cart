@@ -75,7 +75,7 @@ let Header=()=>{
     <li className='lg:p-0 p-[10px]   pl-[20px]   lg:border-0 border-t-[1px]  hover:cursor-pointer hover:text-red-500   border-slate-300    '  onClick={LogOut}  > Log out </li>
         ):(
             
-            <Link  to= "/LogIn" > 
+            <Link  to= "/auth" > 
             <li className='lg:p-0 p-[10px]   pl-[20px]   lg:border-0 border-t-[1px]  hover:cursor-pointer hover:text-red-500   border-slate-300    ' > Log in </li>
             </Link>
         
